@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Caculator</title>
 </head>
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
@@ -21,12 +21,12 @@
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        // grab data from inputs
+        // Grab data from inputs
         $num01 = filter_input(INPUT_POST,"num01", FILTER_SANITIZE_NUMBER_FLOAT);
         $num02 = filter_input(INPUT_POST,"num02", FILTER_SANITIZE_NUMBER_FLOAT);
         $operator = htmlspecialchars($_POST["operator"]);
 
-        // error handlers
+        // Error handlers
         $error = false;
         if (empty($num01) || empty($num02) || empty($operator)){
             echo"<p>Fill in all Fields </p>";
